@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ME21D073</title>
+	
+</head>
+<style>
+	#f {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 10px;
+
+}
+</style>
+<body>
+	<script type="text/javascript">
+function verify()
+{
+	var fname = document.getElementById("fname");
+	var mname = document.getElementById("mname");
+	var lname = document.getElementById("lname");
+	var phone = document.getElementById("phone");
+	var email = document.getElementById("email");
+	var birthday = document.getElementById("birthday");
+	var address = document.getElementById("address");
+	var myfile1 = document.getElementById("myfile1");
+	var myfile2 = document.getElementById("myfile2");
+	var myfile3 = document.getElementById("myfile3");
+	var myfile4 = document.getElementById("myfile4");
+
+
+	var quantity = document.getElementById("quantity");
+	
+
+	var msg = new Array();
+	var flag = 1;
+	var message = "Following Details are Required\n";
+	var message2 = "Following Details are Required<br>";
+	//validation starts
+	if(fname.value == "")
+	{
+		msg[0] = " First Name is Required";
+		flag = 0;
+	}else { msg[0] = ""; }
+
+	if(mname.value == "")
+	{
+		msg[0] = " Middle Name is Required";
+		flag = 0;
+	}else { msg[0] = ""; }
+
+	if(lname.value == "")
+	{
+		msg[1] = " Last Name is Required";
+		flag = 0;
+	}else { msg[1] = ""; }
+
+	if(phone.value == "")
+	{
+		msg[2] = " Contact number is Required";
+		flag = 0;
+	}else { msg[2] = ""; }
+
+	if(email.value == "")
+	{
+		msg[3] = " Email ID  is Required";
+		flag = 0;
+	}else { msg[3] = ""; }
+
+	if(birthday.value == "")
+	{
+		msg[3] = " DOB  is Required";
+		flag = 0;
+	}else { msg[3] = ""; }
+
+	if(address.value == "")
+	{
+		msg[4] = " Registered address is Required";
+		flag = 0;
+	}else { msg[4] = ""; }
+
+	if(myfile1.value == "")
+	{
+		msg[5] = " Aadhar card is Required";
+		flag = 0;
+	}else { msg[5] = ""; }
+
+	if(myfile2.value == "")
+	{
+		msg[6] = " PAN is Required";
+		flag = 0;
+	}else { msg[6] = ""; }
+
+	if(myfile3.value == "")
+	{
+		msg[7] = " Ration card is Required";
+		flag = 0;
+	}else { msg[7] = ""; }
+
+	if(myfile3.value == "")
+	{
+		msg[8] = " Passbook is Required";
+		flag = 0;
+	}else { msg[8] = ""; }
+
+	if(quantity.value == "")
+	{
+		msg[9] = " Number of documents uplaoded is Required";
+		flag = 0;
+	}else { msg[9] = ""; }
+
+	if (flag == 0)
+	{
+		for(var x=0;x<=9;x++)
+		{
+			if(msg[x] != "")
+			{
+				message += msg[x] + "\n";
+				message2 += msg[x] + "<br>";
+			}                             
+		}
+		alert(message);
+		document.getElementById("abc").innerHTML = "<p style='color:red;'>"+message2+"</p>";
+		return false;
+
+	}
+	else
+	{
+		return true;
+	}
+
+
+}
+</script>
+
+
+
+	<div align="center">
+		<h1 style="background-color:powderblue">DOC.SAVER </h1>
+		<table border="1" cellspacing="0" cellpadding="10">
+	<form method="post" action="" onSubmit="return verify()">
+
+
+		<table border="1" cellspacing="0" cellpadding="10" id="f" >
+        <tr> 
+        	<td colspan="5" align="center" id="f">You can uplaod your important documents and save them here!!!!!!</td>
+       </tr>
+       <tr>
+       	<td > First Name: </td>
+        <td><input type="text" name="fname" id="fname" size="25" placeholder=" First Name" /></td>
+       </tr>
+
+       <tr>
+       	<td> Middle Name: </td>
+        <td><input type="text" name="mname" id="mname" size="25" placeholder=" Middle Name" /></td>
+       </tr>
+
+       <tr>
+       	<td> Last Name: </td>
+        <td><input type="text" name="lname" id="lname" size="25" placeholder=" Last Name" /></td>
+       </tr>
+
+        <tr>
+       	<td> <label for="phone">Enter your registered phone number:</label> </td>
+        <td><input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder=" Contact number"> </td>
+       </tr>
+
+       <tr>
+       	<td>  Enter your registered Email : </td>
+        <td><input type="email" id="email" name="email" placeholder="Email ID" /></td>
+       </tr>
+
+       <tr>
+       	<td>  Enter your Date of Birth : </td>
+        <td><input type="date" id="birthday" name="birthday" placeholder="DOB" /></td>
+       </tr>
+
+       <tr>
+       	<td> Enter your registered Address : </td>
+        <td><input type="text" name="address" id="address" size="50" placeholder=" Address" /></td>
+       </tr>
+
+        <tr>
+       	<td> Upload your Aadhar Card : </td>
+        <td><input type="file" id="myfile1" name="myfile1" /></td>
+       </tr>
+
+       <tr>
+       	<td> Upload your PAN Card : </td>
+        <td><input type="file" id="myfile2" name="myfile2"  /></td>
+       </tr>
+
+        <tr>
+       	<td> Upload your Ration Card : </td>
+        <td><input type="file" id="myfile3" name="myfile3"  /></td>
+       </tr>
+
+        <tr>
+       	<td> Upload your Passbook Card : </td>
+        <td><input type="file" id="myfile4" name="myfile4"  /></td>
+       </tr>
+
+       <tr>
+       	<td> Upload your anyother important document (optional) : </td>
+        <td><input type="file" id="myfile5" name="myfile5"  /></td>
+       </tr>
+
+        <tr>
+       	<td> <label for="quantity">Select number of documents uplaoded :</label> </td>
+        <td><input type="number" id="quantity" name="quantity" min="1" max="100" step="1" > </td>
+       </tr>
+
+        
+
+      
+
+       <tr>
+            	<td align="center" colspan="2">
+                <input type="submit" value="REGISTER" />
+                <input type="reset" value="CLEAR" />
+                </td>
+        </tr>
+
+</body>
+</html>
